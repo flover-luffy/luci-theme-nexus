@@ -146,6 +146,134 @@
     --border-color: rgba(51, 65, 85, 0.5);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --gray-50: rgba(255, 255, 255, 0.05);
+  }
+  body,
+  html,
+  .main,
+  .main-left,
+  .main-right {
+    background-color: var(--background-color) !important;
+    background-image: var(--background-gradient), var(--background-pattern) !important;
+  }
+  .cbi-section,
+  .cbi-map,
+  .cbi-value,
+  .panel,
+  .card {
+    background-color: var(--card-bg) !important;
+  }
+  table,
+  .table,
+  tbody,
+  thead,
+  tfoot,
+  tr,
+  .tr {
+    background-color: transparent !important;
+  }
+  table > tbody > tr,
+  .table > .tr,
+  table > tbody > tr:nth-child(2n),
+  .table > .tr:nth-child(2n),
+  div > table > tbody > tr:nth-of-type(2n),
+  div > .table > .tr:nth-of-type(2n) {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+  }
+  table > thead > tr > th,
+  .table > .tr > .th,
+  table > tbody > tr > th,
+  table > tfoot > tr > th {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-main) !important;
+  }
+  table > tbody > tr > td,
+  .table > .tr > .td,
+  table > tfoot > tr > td,
+  table > thead > tr > td {
+    color: var(--text-main) !important;
+    background-color: transparent !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-main) !important;
+    background: transparent !important;
+  }
+  p,
+  span,
+  div,
+  label,
+  li,
+  a,
+  strong,
+  em,
+  small {
+    color: var(--text-main) !important;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    color: var(--text-main) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--border-color) !important;
+  }
+  .ifacebox {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+  .ifacebox-head {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+  }
+  .ifacebox-body {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+  }
+  .ifacebox strong,
+  .ifacebox span,
+  .ifacebox label {
+    color: #ffffff !important;
+  }
+  .cbi-progressbar {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .label,
+  .badge,
+  .ifacebadge {
+    background-color: rgba(59, 130, 246, 0.3) !important;
+    color: #ffffff !important;
+  }
+  a:link,
+  a:visited,
+  a:active {
+    color: var(--primary) !important;
+  }
+  a:hover {
+    color: var(--primary-light) !important;
+  }
+  .menu,
+  .nav li {
+    background-color: transparent !important;
+    color: var(--menu-color) !important;
+  }
+  .menu.active,
+  .nav li.active {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+  }
+  .cbi-value-title,
+  .cbi-value-field,
+  .cbi-section-descr,
+  .cbi-map-descr {
+    color: var(--text-main) !important;
+    background-color: transparent !important;
+  }
+  .cbi-rowstyle-1,
+  .cbi-rowstyle-2 {
+    background-color: rgba(255, 255, 255, 0.03) !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1893,7 +2021,7 @@ tr > th,
 }
 div > table > tbody > tr:nth-of-type(2n),
 div > .table > .tr:nth-of-type(2n) {
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 /* fix multiple table */
 table table,
@@ -2236,7 +2364,7 @@ td > table > tbody > tr > td,
 }
 .cbi-section .cbi-section-remove:nth-of-type(2n),
 .container > .cbi-section .cbi-section-node:nth-of-type(2n) {
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 [data-tab-title] {
   overflow: hidden;
@@ -2260,7 +2388,7 @@ td > table > tbody > tr > td,
 }
 .cbi-section[id] .cbi-section-remove:nth-of-type(4n+3),
 .cbi-section[id] .cbi-section-node:nth-of-type(4n+4) {
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 .cbi-section-node-tabbed {
   margin-top: 0;
@@ -2273,7 +2401,7 @@ td > table > tbody > tr > td,
   gap: 0.875rem;
 }
 .cbi-tabcontainer > .cbi-value:nth-of-type(2n) {
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 .cbi-value-field {
   display: table-cell;
@@ -2382,7 +2510,7 @@ td > table > tbody > tr > td,
   background-color: #f6f9fc;
 }
 .cbi-rowstyle-1 {
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 .cbi-rowstyle-2 {
   background-color: #eee;
@@ -3161,7 +3289,7 @@ td > .ifacebadge,
   flex-direction: column;
   border-radius: 4px;
   min-width: 100px;
-  background-color: #f9f9f9;
+  background-color: var(--gray-50);
 }
 .ifacebox-head {
   padding: 0.25em;
