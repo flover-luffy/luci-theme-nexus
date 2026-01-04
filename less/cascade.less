@@ -355,17 +355,24 @@
     color: var(--primary-light) !important;
   }
 
-  // Menu items - clear hierarchy
+  // ========================================================================
+  // MENU HIERARCHY SYSTEM (UI/UX Pro Max)
+  // Three-tier system: Normal → Parent Active → Child Active
+  // ========================================================================
+
+  // Base menu items
   .menu,
   .nav li {
     background-color: transparent !important;
-    color: var(--menu-color) !important;
+    color: rgba(203, 213, 225, 0.9) !important;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
-  // Parent menu active state - lighter blue
+  // Parent menu active state (Tier 2)
   .menu.active {
-    background-color: rgba(96, 165, 250, 0.2) !important;
+    background-color: rgba(59, 130, 246, 0.15) !important;
     color: #ffffff !important;
+    border-left: 3px solid #3B82F6 !important;
   }
 
   .nav li.active {
@@ -373,30 +380,42 @@
     color: #ffffff !important;
   }
 
-  // Submenu items - distinct styling
+  // Parent menu hover
+  .menu:hover {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  // Submenu items (Tier 1) - distinct styling
   .food,
   a.food {
-    color: rgba(203, 213, 225, 0.9) !important; // Lighter grey
-    padding-left: 2.5rem !important;
+    color: rgba(148, 163, 184, 0.9) !important;
+    padding-left: 3rem !important;
+    font-size: 0.875rem !important;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
-  // Active submenu - darker blue to differentiate from parent
+  // Active submenu (Tier 3) - darker blue to differentiate
   .food.active,
   a.food.active {
+    background-color: rgba(59, 130, 246, 0.25) !important;
     color: #ffffff !important;
-    background-color: rgba(59, 130, 246, 0.9) !important;
-    border-left: 3px solid rgba(96, 165, 250, 1) !important;
+    border-left: 3px solid #60A5FA !important;
+    font-weight: 500 !important;
   }
 
-  // Hover states
+  // Submenu hover
   .food:hover,
   a.food:hover {
-    background-color: rgba(59, 130, 246, 0.2) !important;
-    color: #ffffff !important;
+    background-color: rgba(59, 130, 246, 0.12) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  .menu:hover {
-    background-color: rgba(96, 165, 250, 0.1) !important;
+  // Focus states for accessibility
+  .menu:focus-visible,
+  .food:focus-visible {
+    outline: 2px solid #3B82F6 !important;
+    outline-offset: -2px !important;
   }
 
   // CBI specific elements
