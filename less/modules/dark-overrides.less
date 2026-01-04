@@ -172,3 +172,81 @@ input:-webkit-autofill:active {
         filter: invert(0.8);
     }
 }
+
+// ========================================================================
+// Sidebar & Navigation Overrides
+// ========================================================================
+
+// Sidebar Scrollbar - Specific override for .main-left
+.main-left::-webkit-scrollbar-thumb {
+    background-color: var(--primary) !important;
+    border-radius: var(--radius-full);
+}
+
+.main-left::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+// Brand / Logo
+.sidenav-header .brand {
+    color: var(--text-main) !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+// Menu Items - Base Level
+.nav li a {
+    color: var(--text-secondary) !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav li a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px var(--primary);
+}
+
+// Active Menu State (Parent)
+.nav>li>a.active,
+.nav>.slide>.menu.active {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%) !important;
+    border-left: 3px solid var(--primary);
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+// Submenus
+.slide-menu {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: var(--radius-md);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+// Submenu Items
+.slide-menu li a {
+    color: var(--text-secondary) !important;
+    opacity: 0.8;
+}
+
+.slide-menu li a:hover {
+    color: #fff !important;
+    opacity: 1;
+    background: transparent !important;
+    transform: translateX(5px);
+}
+
+// Submenu Active State
+.slide-menu .active a {
+    color: var(--primary-light) !important;
+    font-weight: 600;
+}
+
+.slide-menu .active::after {
+    background: linear-gradient(90deg, var(--primary) 0%, transparent 100%) !important;
+    opacity: 0.5;
+}
+
+// Mobile Menu Toggle
+.showSide {
+    color: #fff !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
