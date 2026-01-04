@@ -100,10 +100,18 @@ jobs:
           echo "src-git-full packages https://github.com/openwrt/packages.git;master" >> feeds.conf
           echo "src-git-full luci https://github.com/openwrt/luci.git;master" >> feeds.conf
           echo "src-git-full routing https://git.openwrt.org/feed/routing.git;master"  >> feeds.conf
-          # Clone and rename to nexus
-          git clone -b master https://github.com/${{ github.repository }}.git package/downloads/temp-theme
-          mv package/downloads/temp-theme package/downloads/luci-theme-nexus
           ./scripts/feeds update -a
+          
+      - name: Checkout theme code
+        uses: actions/checkout@main
+        with:
+          path: theme-temp
+          
+      - name: Install theme to SDK
+        run: |
+          mkdir -p sdk/package/downloads/luci-theme-nexus
+          cp -r theme-temp/* sdk/package/downloads/luci-theme-nexus/
+          cd sdk
           echo "CONFIG_PACKAGE_luci-theme-nexus=m" > .config
           ./scripts/feeds install -d n luci-theme-nexus
           make download -j8
