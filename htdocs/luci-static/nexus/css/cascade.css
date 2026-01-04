@@ -27,20 +27,25 @@
   --primary-lighter: #93C5FD;
   --header-color: #fff;
   --header-bg: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  --menu-bg-color: rgba(255, 255, 255, 0.8);
+  --menu-bg-color: rgba(255, 255, 255, 0.5);
   --menu-color: #64748B;
   --main-menu-color: #1E293B;
-  --background-color: #E5E7EB;
-  --background-gradient: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
-  --card-bg: rgba(255, 255, 255, 0.6);
-  --login-form-bg-color: rgba(255, 255, 255, 0.7);
+  --background-color: #D1D5DB;
+  --background-gradient: linear-gradient(135deg, #D1D5DB 0%, #9CA3AF 100%);
+  --background-pattern: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM9 0h1v1H9zM0 9h1v1H0zM9 9h1v1H9z' fill='%23000' fill-opacity='0.05'/%3E%3C/svg%3E");
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --login-form-bg-color: rgba(255, 255, 255, 0.25);
+  --login-form-border: rgba(255, 255, 255, 0.5);
   --text-main: #1E293B;
   --text-secondary: #64748B;
   --border-color: rgba(226, 232, 240, 0.8);
-  --blur-radius: 16px;
-  --blur-opacity: 0.6;
-  --glass-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+  --blur-radius: 24px;
+  --blur-saturate: 180%;
+  --blur-opacity: 0.4;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.6);
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
@@ -125,18 +130,22 @@
     --primary: #60A5FA;
     --primary-dark: #3B82F6;
     --header-bg: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-    --menu-bg-color: rgba(30, 41, 59, 0.8);
+    --menu-bg-color: rgba(17, 24, 39, 0.6);
     --menu-color: #CBD5E1;
     --main-menu-color: #F1F5F9;
-    --background-color: #0F172A;
-    --background-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-    --card-bg: rgba(30, 41, 59, 0.5);
-    --login-form-bg-color: rgba(15, 23, 42, 0.6);
+    --background-color: #111827;
+    --background-gradient: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+    --background-pattern: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM9 0h1v1H9zM0 9h1v1H0zM9 9h1v1H9z' fill='%23fff' fill-opacity='0.03'/%3E%3C/svg%3E");
+    --card-bg: rgba(31, 41, 55, 0.3);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    --login-form-bg-color: rgba(15, 23, 42, 0.2);
+    --login-form-border: rgba(255, 255, 255, 0.15);
     --text-main: #F1F5F9;
     --text-secondary: #94A3B8;
     --border-color: rgba(51, 65, 85, 0.5);
-    --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -266,6 +275,8 @@ body {
 body {
   margin: 0;
   background: var(--background-gradient, var(--background-color));
+  background-image: var(--background-pattern);
+  background-attachment: fixed;
   color: var(--text-main);
   -webkit-tap-highlight-color: transparent;
   font-size: 0.875rem;
@@ -902,9 +913,10 @@ select[multiple="multiple"] {
   width: 26rem;
   flex-direction: column;
   background-color: var(--login-form-bg-color);
-  backdrop-filter: blur(var(--blur-radius));
-  border-right: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-right: var(--login-form-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .login-page .login-container .login-form {
   position: absolute;
@@ -1070,7 +1082,8 @@ select[multiple="multiple"] {
   overflow-x: auto;
   word-break: break-word;
   background-color: var(--menu-bg-color);
-  backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
   border-right: var(--glass-border);
   box-shadow: var(--glass-shadow);
   transition: all var(--transition-base);
@@ -1650,9 +1663,10 @@ footer > a {
   border: 0;
   border-radius: var(--radius-lg);
   background-color: var(--card-bg);
-  backdrop-filter: blur(var(--blur-radius));
-  border: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--blur-radius)) saturate(var(--blur-saturate));
+  -webkit-backdrop-filter: blur(var(--blur-radius)) saturate(var(--blur-saturate));
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
   transition: all var(--transition-base);
 }
 .cbi-section:last-child,
