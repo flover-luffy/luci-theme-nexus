@@ -551,19 +551,19 @@
     .cbi-title {
         position: relative;
 
-        > div:last-child {
+        >div:last-child {
             position: absolute;
             right: 1.25rem;
             top: 0;
 
             span {
                 font-size: 0;
-                background: none!important;
-                color: #ced4da!important;
+                background: none !important;
+                color: #ced4da !important;
 
                 &:after {
                     transition: all .3s;
-                    font-family: 'argon' !important;
+                    font-family: 'nexus-icons' !important;
                     content: '\e90f';
                     font-size: 1.1rem;
                     padding: .8755rem 0;
@@ -582,7 +582,7 @@
 // Status - Overview
 [data-page="admin-status"],
 [data-page="admin-status-overview"] {
-    #view > div:first-child {
+    #view>div:first-child {
         gap: 0 !important;
     }
 }
@@ -706,8 +706,8 @@
         }
 
         .announcement-card {
-            width: auto!important;
-            margin: 10px!important;
+            width: auto !important;
+            margin: 10px !important;
         }
     }
 
@@ -817,17 +817,17 @@
         border: 1px solid #dee2e6;
         background-color: transparent;
         border-radius: 0.25rem;
-        font-family: 'Google Sans' !important;
+        font-family: var(--font-family-heading) !important;
         box-shadow: none;
     }
 
     #debug-rc-output>textarea {
-        font-family: 'Google Sans' !important;
+        font-family: var(--font-family-heading) !important;
     }
 
     .CodeMirror {
         font-size: inherit;
-        font-family: 'Google Sans' !important;
+        font-family: var(--font-family-heading) !important;
     }
 
     .cbi-button-up,
@@ -1003,7 +1003,7 @@ div[style*="display:grid;grid-template-columns:repeat"] {
     flex-wrap: wrap;
 }
 
-#mwan3-service-status > .alert-message { 
+#mwan3-service-status>.alert-message {
     position: static;
     transform: none;
 }

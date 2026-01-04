@@ -1,18 +1,18 @@
-// out: ../htdocs/luci-static/argon/css/cascade.css, compress: false , sourceMap: false
+// out: ../htdocs/luci-static/nexus/css/cascade.css, compress: false , sourceMap: false
 /**
- *  Argon is a clean HTML5 theme for LuCI. It is based on luci-theme-material and Argon Template
+ *  Nexus is a clean HTML5 theme for LuCI. It is based on luci-theme-material and Argon Template
  *
- *  luci-theme-argon
- *      Copyright 2025 Jerrykuku <jerrykuku@qq.com>
+ *  luci-theme-nexus
+ *      Copyright 2026 Jerrykuku <jerrykuku@qq.com>
  *
  *  Have a bug? Please create an issue here on GitHub!
- *      https://github.com/jerrykuku/luci-theme-argon/issues
+ *      https://github.com/jerrykuku/luci-theme-nexus/issues
  *
  *  luci-theme-material:
  *      Copyright 2015 Lutty Yang <lutty@wcan.in>
  *      https://github.com/LuttyYang/luci-theme-material/
  *
- *  Agron Theme
+ *  Inspired by Argon Dashboard
  *      https://demos.creative-tim.com/argon-dashboard/index.html
  *
  *  Login background
@@ -23,78 +23,88 @@
  */
 
 :root {
-  // Modern Color Palette - Gradient-capable HSL values
-  --primary: hsl(230, 75%, 62%);
-  --primary-dark: hsl(250, 70%, 55%);
-  --primary-light: hsl(230, 75%, 70%);
-  --dark-primary: hsl(250, 45%, 40%);
+  // ========================================================================
+  // Nexus Theme - Professional Dashboard Color System
+  // ========================================================================
+
+  // Primary Colors - Professional Blue Palette
+  --primary: #3B82F6; // Blue-500
+  --primary-dark: #2563EB; // Blue-600
+  --primary-light: #60A5FA; // Blue-400
+  --primary-lighter: #93C5FD; // Blue-300
+
+  // CTA & Accent
+  --cta: #F97316; // Orange-500
+  --cta-hover: #EA580C; // Orange-600
 
   // Header & Navigation
   --header-color: #fff;
-  --header-bg: linear-gradient(135deg, hsl(230, 75%, 62%) 0%, hsl(250, 70%, 55%) 100%);
+  --header-bg: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   --menu-bg-color: #ffffff;
-  --menu-color: #5f6368;
-  --main-menu-color: #202124;
+  --menu-color: #64748B; // Slate-500
+  --main-menu-color: #1E293B; // Slate-800
 
-  // Vibrant Accent Colors
-  --red: hsl(352, 88%, 62%);
-  --orange: hsl(15, 95%, 62%);
-  --yellow: hsl(45, 100%, 60%);
-  --green: hsl(162, 73%, 50%);
-  --emerald: hsl(158, 64%, 52%);
-  --teal: hsl(188, 91%, 48%);
-  --cyan: hsl(168, 100%, 58%);
-  --blue: hsl(217, 91%, 60%);
-  --indigo: hsl(243, 75%, 59%);
-  --purple: hsl(262, 52%, 47%);
-  --pink: hsl(330, 81%, 60%);
+  // Semantic Colors - Status Indicators
+  --success: #10B981; // Emerald-500
+  --info: #06B6D4; // Cyan-500
+  --warning: #F59E0B; // Amber-500
+  --danger: #EF4444; // Red-500
 
-  // Semantic Colors
-  --success: hsl(162, 73%, 50%);
-  --info: hsl(188, 91%, 48%);
-  --warning: hsl(15, 95%, 62%);
-  --danger: hsl(352, 88%, 62%);
+  // Extended Palette (for charts/data visualization)
+  --red: #EF4444;
+  --orange: #F97316;
+  --yellow: #F59E0B;
+  --green: #10B981;
+  --emerald: #10B981;
+  --teal: #14B8A6;
+  --cyan: #06B6D4;
+  --blue: #3B82F6;
+  --indigo: #6366F1;
+  --purple: #8B5CF6;
+  --pink: #EC4899;
 
-  // Neutral Grays - Refined scale
+  // Neutral Grays - Slate Scale (Better for dashboards)
   --white: #ffffff;
-  --gray-50: #F8F9FA;
-  --gray-100: #F1F3F5;
-  --gray-200: #E9ECEF;
-  --gray-300: #DEE2E6;
-  --gray-400: #CED4DA;
-  --gray-500: #ADB5BD;
-  --gray-600: #8898AA;
-  --gray-700: #5F6368;
-  --gray-800: #32325D;
-  --gray-900: #212529;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
   --black: #000000;
 
   // Legacy aliases for compatibility
-  --gray: var(--gray-600);
+  --gray: var(--gray-500);
   --gray-dark: var(--gray-800);
-  --light: var(--gray-400);
+  --light: var(--gray-300);
   --lighter: var(--gray-200);
   --dark: var(--gray-900);
   --darker: var(--black);
-  --default: #172b4d;
+  --default: var(--gray-800);
 
   // Background Colors
   --background-color: var(--gray-50);
   --background-secondary: var(--white);
-  --login-form-bg-color: rgba(255, 255, 255, 0.85);
+  --login-form-bg-color: rgba(255, 255, 255, 0.90);
 
-  // Glassmorphism Effects
-  --blur-radius: 16px;
-  --blur-opacity: 0.75;
-  --blur-radius-dark: 20px;
-  --blur-opacity-dark: 0.65;
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  // Glassmorphism Effects - Optimized
+  --blur-radius: 12px;
+  --blur-opacity: 0.80;
+  --blur-radius-dark: 16px;
+  --blur-opacity-dark: 0.70;
+  --glass-border: rgba(255, 255, 255, 0.20);
+  --glass-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.12);
 
-  // Typography System
-  --font-family-sans-serif: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  // Typography System - Poppins + Open Sans
+  --font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Yahei', sans-serif;
+  --font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   --font-family-mono: 'SF Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
 
+  // Font Sizes - Modular Scale
   --font-size-xs: 0.75rem; // 12px
   --font-size-sm: 0.875rem; // 14px
   --font-size-base: 1rem; // 16px
@@ -102,21 +112,23 @@
   --font-size-xl: 1.25rem; // 20px
   --font-size-2xl: 1.5rem; // 24px
   --font-size-3xl: 1.875rem; // 30px
+  --font-size-4xl: 2.25rem; // 36px
 
+  // Line Heights
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
 
-  // Shadow System - Layered elevation
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  // Shadow System - Softer, Modern Elevation
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.20);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
 
-  // Spacing Scale (0.25rem increments)
+  // Spacing Scale - Mathematical (0.25rem increments)
   --spacing-0: 0;
   --spacing-1: 0.25rem; // 4px
   --spacing-2: 0.5rem; // 8px
@@ -128,8 +140,9 @@
   --spacing-10: 2.5rem; // 40px
   --spacing-12: 3rem; // 48px
   --spacing-16: 4rem; // 64px
+  --spacing-20: 5rem; // 80px
 
-  // Border Radius - Modern feel
+  // Border Radius - Consistent Rounding
   --radius-sm: 0.375rem; // 6px
   --radius-md: 0.5rem; // 8px
   --radius-lg: 0.75rem; // 12px
@@ -137,13 +150,32 @@
   --radius-2xl: 1.5rem; // 24px
   --radius-full: 9999px;
 
-  // Transitions
+  // Transitions - UX Best Practices (150-300ms)
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   // Icons
   --dropdown-arrow-icon: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik01LjI5MyA5LjI5M2ExIDEgMCAwIDEgMS40MTQgMEwxMiAxNC41ODZsNS4yOTMtNS4yOTNhMSAxIDAgMSAxIDEuNDE0IDEuNDE0bC02IDZhMSAxIDAgMCAxLTEuNDE0IDBsLTYtNmExIDEgMCAwIDEgMC0xLjQxNCIvPjwvc3ZnPg==");
+}
+
+// ========================================================================
+// Accessibility - Reduced Motion Support
+// ========================================================================
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /*
@@ -2024,7 +2056,7 @@ td>.ifacebadge,
 
 #syslog {
   font-size: small;
-  font-family: 'Google Sans';
+  font-family: 'Poppins', 'Google Sans', sans-serif;
   line-height: 1.25;
   overflow-y: hidden;
   width: 100%;

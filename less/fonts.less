@@ -4,16 +4,8 @@
 // CSS Custom Properties for Font Management
 // ==========================================================================
 
-@font-face {
-    font-family: 'Google Sans';
-    src: local('Google Sans'),
-        local('GoogleSans-Regular'),
-        url('../fonts/GoogleSans-Regular.woff2') format('woff2'),
-        url('../fonts/GoogleSans-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// Google Fonts - Modern Professional Typography
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 /*  Logo Font */
 @font-face {
@@ -26,7 +18,17 @@
     font-display: swap;
 }
 
-/* Icon Font */
+/* Icon Font - Nexus Icons */
+@font-face {
+    font-family: 'nexus-icons';
+    src: url('../fonts/argon.woff2') format('woff2'),
+        url('../fonts/argon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Legacy compatibility
 @font-face {
     font-family: 'argon';
     src: url('../fonts/argon.woff2') format('woff2'),

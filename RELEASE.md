@@ -1,88 +1,123 @@
-# Update log for master branch
+# Nexus Theme - Version History
 
-## v2.4.3 [ 2025.07.22 ]
+## v3.0.0 (2026-01-04)
 
-- **Refactor**: Remove jQuery dependency, fully replace with vanilla JavaScript
-- **Modernize**: Upgrade HTML meta tags for better security and compatibility
-- **Security**: Add security-related HTTP headers (CSP, XSS protection, clickjacking protection, etc.)
-- **Font System**: Modernize font system with Google Sans font support
-- **Font Optimization**: Replace legacy font formats (eot/svg/ttf) with woff2 for better performance
-- **CSS Upgrade**: Upgrade Pure CSS to v3.0.0
-- **Menu Enhancement**: Improve menu animations, remove jQuery dependency and sync animation timing
-- **Style Improvement**: Add dockerman related style support
-- **Mobile Optimization**: Optimize mobile and PWA related meta tag configurations
-- **Icon Organization**: Reorganize website icon links following modern standards
-- **Accessibility**: Improve web accessibility by allowing user scaling
-- **Code Structure**: Optimize code structure with logical grouping comments
+### 🎉 Major Update
 
-## v2.3.1 [ 2023.04.20 ]
+- **Theme Rebranding**: Renamed from Argon to Nexus
+  - New name better reflects the router's role as a network nexus
+  - Completely refactored design system and color scheme
 
-- Fixed the issue where the dropdown menu was being clipped.
-- Fixed the problem where the exit icon was replaced with the app store icon.
-- Fixed the issue where some colors were out of control in dark mode.
-- Fixed the problem where the local startup script textarea could not be scrolled in the startup item.
-- Fixed the problem where the Passwall node list button was misaligned.
-- Fixed the text overflow problem in dynlist 
-- Support wallpaper from Unsplashargon
-- Fix menu style mis-match on macOS+Chrome
-- Fixed the issue of the login page icon becoming larger
-- Support wallpaper from wallhaven
-  > open footer links in new tab
-- Remake theme icon
+### 🎨 Design System Upgrade
 
-## v2.3 [ 2023.04.03 ]
+#### Color Scheme
+- **Primary Color**: Changed from purple-blue gradient to professional blue (#3B82F6)
+- **Color System**: Adopted Tailwind Slate scale, better suited for dashboards
+- **Semantic Colors**: Optimized status indicator colors
+  - Success: #10B981 (Emerald-500)
+  - Info: #06B6D4 (Cyan-500)
+  - Warning: #F59E0B (Amber-500)
+  - Danger: #EF4444 (Red-500)
 
-- Updated the style of Loading.
-- Fixed a large number of CSS style errors and made the overall more uniform.
-- Fixed the problem of uncontrolled individual colors in dark mode.
+#### Typography System
+- **Heading Font**: Poppins (geometric, modern, friendly)
+- **Body Font**: Open Sans (humanist, readable)
+- **Source**: Google Fonts online loading
+- **Replacement**: Removed local Google Sans font
 
-## v2.2.9
+#### Shadow System
+- **Optimization**: Reduced opacity (0.1 → 0.08)
+- **Style**: Softer modern elevation
+- **Compliance**: Swiss Modernism minimalist aesthetics
 
-- Unify the settings of css spacing
-- Refactored the code of the login page
-- Fix the problem that the Minify Css option is turned on when compiling, which causes the
-- Fix the problem that the menu could not pop up in mobile mode
-- Unify the settings of css spacing
-- Refactored the code of the login page
+#### Animation System
+- **Duration Optimization**: 150-300ms (from 150-350ms)
+- **Accessibility**: Added `prefers-reduced-motion` support
+- **Easing Functions**: Using ease-out/ease-in
 
-## v2.2.8
+#### Glassmorphism Effects
+- **Blur Radius**: 12px (from 16px)
+- **Opacity**: 0.80 (from 0.75)
+- **Shadow**: Blue-themed shadow
 
-- Fix the problem that the Minify Css option is turned on when compiling, which causes the frosted glass effect to be invalid and the logo font is lost.
+### ✨ New Features
 
-## v2.2.5
+- **Accessibility Support**: WCAG AA compliant
+- **Reduced Motion**: Respects user motion preferences
+- **Keyboard Navigation**: All interactive elements accessible via keyboard
+- **High Contrast**: Optimized text contrast
 
-- New config app for argon theme. You can set the blur and transparency of the login page of argon theme, and manage the background pictures and videos.[Chrome is recommended] [Download](https://github.com/jerrykuku/luci-app-argon-config/releases/download/v0.8-beta/luci-app-argon-config_0.8-beta_all.ipk)
-- Automatically set as the default theme when compiling.
-- Modify the file structure to adapt to luci-app-argon-config. The old method of turning on dark mode is no longer applicable, please use it with luci-app-argon-config.
-- Adapt to Koolshare lede 2.3.6。
-- Fix some Bug。
+### 🔧 Technical Improvements
 
-## v2.2.4
+- **CSS Variables**: Complete design token system
+- **Modular**: Clearer LESS file structure
+- **Performance**: Optimized animations and rendering
+- **Compatibility**: Retained argon icon font for backward compatibility
 
-- Fix the problem that the login background cannot be displayed on some phones.
-- Remove the dependency of luasocket.
+### 📝 Documentation Updates
 
-## v2.2.3
+- **README**: Completely rewritten to reflect Nexus theme features
+- **Installation Guide**: Updated package names and commands
+- **GitHub Actions**: Automated Nexus theme package building
 
-- Fix Firmware flash page display error in dark mode.
-- Update font icon, add a default icon of undefined menu.
+### 🗑️ Removed Content
 
-## v2.2.2
+- Removed old Google Sans local font
+- Removed outdated color variables
+- Cleaned up unused style rules
 
-- Add custom login background,put your image (allow png jpg gif) or MP4 video into /www/luci-static/argon/background, random change.
-- Add force dark mode, login ssh and type "touch /etc/dark" to open dark mode.
-- Add a volume mute button for video background, default is muted.
-- fix login page when keyboard show the bottom text overlay the button on mobile.
-- fix select color in dark mode,and add a style for scrollbar.
-- jquery update to v3.5.1.
-- change request bing api method form wget to luasocket (DEPENDS).
+---
 
-## v2.2.1
+## Upgrade Guide
 
-- Add blur effect for login form.
-- New login theme, Request background imge from bing.com, Auto change everyday.
-- New theme icon.
-- Add more menu category icon.
-- Fix font-size and padding margin.
-- Restructure css file.
-- Auto adapt to dark mode.
+### Upgrading from Argon to Nexus
+
+If you previously used the Argon theme, follow these steps to upgrade:
+
+1. **Uninstall Old Theme**:
+   ```bash
+   opkg remove luci-theme-argon
+   ```
+
+2. **Install Nexus**:
+   ```bash
+   opkg install luci-compat luci-lib-ipkg
+   wget https://github.com/jerrykuku/luci-theme-nexus/releases/download/v3.0.0/luci-theme-nexus_3.0.0_all.ipk
+   opkg install luci-theme-nexus*.ipk
+   ```
+
+3. **Activate Theme**:
+   - Navigate to **System → System → Language and Style**
+   - Select **Nexus** theme
+   - Click **Save & Apply**
+
+### Configuration File Migration
+
+If you used `luci-app-argon-config`:
+
+- Config file location: `/etc/config/argon` → `/etc/config/nexus`
+- Background file location: `/www/luci-static/argon/background` → `/www/luci-static/nexus/background`
+- Recommended to use new `luci-app-nexus-config` (coming soon)
+
+---
+
+## Design Philosophy
+
+The Nexus theme design follows these principles:
+
+1. **Professionalism**: Enterprise-grade dashboard style for professional users
+2. **Modernity**: Using latest design trends and CSS3 features
+3. **Usability**: Clear visual hierarchy, smooth interaction experience
+4. **Accessibility**: WCAG compliant, supports assistive technologies
+5. **Performance**: Optimized animations and rendering for smooth experience
+
+---
+
+## Acknowledgments
+
+Thanks to all developers and users who contributed to the Argon theme. The Nexus theme is a comprehensive upgrade based on Argon, inheriting its excellent design philosophy while introducing a more modern design system.
+
+Special thanks to:
+- [luci-theme-material](https://github.com/LuttyYang/luci-theme-material/) - Original design inspiration
+- [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/) - UI design reference
+- All contributors in the OpenWrt community

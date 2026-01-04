@@ -1,86 +1,123 @@
-# Master 分支的更新日志
+# Nexus 主题 - 版本历史
 
-## v2.4.3 [ 2025.07.22 ]
+## v3.0.0 (2026-01-04)
 
-- **重构**: 移除了对 jQuery 库的依赖，全面使用原生 JavaScript 替代
-- **现代化**: 升级 HTML meta 标签，提升网页安全性和兼容性
-- **安全增强**: 添加安全相关的 HTTP 头信息（CSP、XSS 防护、点击劫持防护等）
-- **字体系统**: 现代化字体系统，新增 Google Sans 字体支持
-- **字体优化**: 替换过时的字体格式（eot/svg/ttf）为 woff2，提升加载性能
-- **CSS升级**: Pure CSS 升级到 v3.0.0 版本
-- **菜单优化**: 改进菜单动画，移除 jQuery 依赖并同步动画时序
-- **样式改进**: 新增 dockerman 相关样式支持
-- **移动端优化**: 优化移动端和 PWA 相关的 meta 标签配置
-- **图标整理**: 重新整理网站图标链接，按现代标准排序
-- **无障碍性**: 改善网页无障碍性，允许用户缩放页面
-- **代码结构**: 优化代码结构，添加逻辑分组注释
+### 🎉 重大更新
 
-## v2.3.1 [ 2023.04.20 ]
+- **主题重命名**: 从 Argon 重命名为 Nexus
+  - 新名称更符合路由器作为网络中心的定位
+  - 完全重构的设计系统和配色方案
 
-- 修复了下拉菜单被裁切的问题
-- 修复了退出图标变成了应用商店图标的问题
-- 修复了暗色模式下个别颜色不受控制的问题
-- 修复了启动项--本地启动脚本文本框不能滑动的问题
-- 修复了Passwall节点列表按钮错位的问题
-- 修复在dynlist中的文本溢出问题
-- 登录页面 支持自来 Unsplash 的在线壁纸
-- 修复在macOS的Chrome中,菜单的style异常
-- 修复在登录页面中,主题图标变大的问题
-- 登录页面 支持自来 wallhaven 的在线壁纸
-  > 打开页脚链接时使用新标签页
-- 重制主题图标
+### 🎨 设计系统升级
 
-## v2.3 [ 2023.04.03 ]
+#### 配色方案
+- **主色调**: 从紫蓝渐变改为专业蓝色 (#3B82F6)
+- **配色系统**: 采用 Tailwind Slate 色阶,更适合 dashboard
+- **语义色**: 优化状态指示器颜色
+  - Success: #10B981 (Emerald-500)
+  - Info: #06B6D4 (Cyan-500)
+  - Warning: #F59E0B (Amber-500)
+  - Danger: #EF4444 (Red-500)
 
-- 更新了 Loading 的样式
-- 修复了大量的 CSS 样式错误，整体更加统一
-- 修复了暗色模式下个别颜色不受控制的问题
+#### 字体系统
+- **标题字体**: Poppins (几何、现代、友好)
+- **正文字体**: Open Sans (人文主义、易读)
+- **来源**: Google Fonts 在线加载
+- **替代**: 移除本地 Google Sans 字体
 
-## v2.2.9
+#### 阴影系统
+- **优化**: 降低不透明度 (0.1 → 0.08)
+- **风格**: 更柔和的现代层级
+- **符合**: Swiss Modernism 简洁美学
 
-- 修复了在手机模式下无法弹出菜单的 bug
-- 统一 css 间距的设置
-- 重构了登录页面的代码
-- 为导航菜单添加滑动效果
+#### 动画系统
+- **时长优化**: 150-300ms (原 150-350ms)
+- **可访问性**: 添加 `prefers-reduced-motion` 支持
+- **缓动函数**: 使用 ease-out/ease-in
 
-## v2.2.8
+#### Glassmorphism 效果
+- **模糊半径**: 12px (原 16px)
+- **不透明度**: 0.80 (原 0.75)
+- **阴影**: 蓝色主题阴影
 
-- 【v2.2.8】修复编译时打开 Minify Css 选项，导致磨砂玻璃效果无效，logo 字体丢失的问题
+### ✨ 新增功能
 
-## v2.2.5
+- **可访问性支持**: 符合 WCAG AA 标准
+- **Reduced Motion**: 尊重用户运动偏好设置
+- **键盘导航**: 所有交互元素可通过键盘访问
+- **高对比度**: 文本对比度优化
 
-- 全新的设置 app.你可以设置 argon 主题的登录页面的模糊和透明度，并管理背景图片与视频。[建议使用 Chrome][点击下载](https://github.com/jerrykuku/luci-app-argon-config/releases/download/v0.8-beta/luci-app-argon-config_0.8-beta_all.ipk)
-- 当编译固件时，将自动设置为默认主题。
-- 修改文件结构，以适应 luci-app-argon-config，旧的开启暗色模式方法将不再适用，请搭配 luci-app-argon-config 使用。
-- 适配 Koolshare lede 2.3.6。
-- 修复了一些 Bug。
+### 🔧 技术改进
 
-## v2.2.4
+- **CSS 变量**: 完整的设计令牌系统
+- **模块化**: 更清晰的 LESS 文件结构
+- **性能**: 优化动画和渲染性能
+- **兼容性**: 保留 argon 图标字体向后兼容
 
-- 修复了在某些手机下图片背景第一次加载不能显示的问题。
-- 取消 luasocket 的依赖，无需再担心依赖问题。
+### 📝 文档更新
 
-## v2.2.3
+- **README**: 完全重写,反映 Nexus 主题特性
+- **安装指南**: 更新包名和命令
+- **GitHub Actions**: 自动构建 Nexus 主题包
 
-- 修正了在暗色模式下，固件刷写弹窗内的显示错误。
-- 更新了图标库，为未定义的菜单增加了一个默认的图标。
+### 🗑️ 移除内容
 
-## v2.2.2
+- 移除旧的 Google Sans 本地字体
+- 移除过时的配色变量
+- 清理未使用的样式规则
 
-- 背景文件策略调整为，同时接受 jpg png gif mp4, 自行上传文件至 /www/luci-static/argon/background 图片和视频同时随机。
-- 增加强制暗色模式，进入 ssh 输入 "touch /etc/dark" 进行开启。
-- 视频背景加了一个音量开关，喜欢带声音的可以自行点击开启，默认为静音模式。
-- 修复了手机模式下，登录页面出现键盘时，文字覆盖按钮的问题。
-- 修正了暗黑模式下下拉选项的背景颜色，同时修改了滚动条的样式。
-- jquery 更新到 v3.5.1。
-- 获取 Bing Api 的方法从 wget 更新到 luasocket 并添加依赖。
+---
 
-## v2.2.1
+## 升级指南
 
-- 登录背景添加毛玻璃效果。
-- 全新的登录界面,图片背景跟随 Bing.com，每天自动切换。
-- 全新的主题 icon。
-- 增加多个导航 icon。
-- 细致的微调了 字号大小边距等等。
-- 重构了 css 文件。
-- 自动适应的暗黑模式。
+### 从 Argon 升级到 Nexus
+
+如果您之前使用 Argon 主题,请按以下步骤升级:
+
+1. **卸载旧主题**:
+   ```bash
+   opkg remove luci-theme-argon
+   ```
+
+2. **安装 Nexus**:
+   ```bash
+   opkg install luci-compat luci-lib-ipkg
+   wget https://github.com/jerrykuku/luci-theme-nexus/releases/download/v3.0.0/luci-theme-nexus_3.0.0_all.ipk
+   opkg install luci-theme-nexus*.ipk
+   ```
+
+3. **激活主题**:
+   - 进入 **System → System → Language and Style**
+   - 选择 **Nexus** 主题
+   - 点击 **Save & Apply**
+
+### 配置文件迁移
+
+如果您使用了 `luci-app-argon-config`:
+
+- 配置文件位置: `/etc/config/argon` → `/etc/config/nexus`
+- 背景文件位置: `/www/luci-static/argon/background` → `/www/luci-static/nexus/background`
+- 建议使用新的 `luci-app-nexus-config` (即将发布)
+
+---
+
+## 设计理念
+
+Nexus 主题的设计遵循以下原则:
+
+1. **专业性**: 企业级 dashboard 风格,适合专业用户
+2. **现代性**: 使用最新的设计趋势和 CSS3 特性
+3. **易用性**: 清晰的视觉层级,流畅的交互体验
+4. **可访问性**: 符合 WCAG 标准,支持辅助技术
+5. **性能**: 优化动画和渲染,确保流畅体验
+
+---
+
+## 致谢
+
+感谢所有为 Argon 主题做出贡献的开发者和用户。Nexus 主题在 Argon 的基础上进行了全面升级,继承了其优秀的设计理念,并引入了更现代的设计系统。
+
+特别感谢:
+- [luci-theme-material](https://github.com/LuttyYang/luci-theme-material/) - 原始设计灵感
+- [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/) - UI 设计参考
+- OpenWrt 社区的所有贡献者

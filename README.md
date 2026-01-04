@@ -9,34 +9,33 @@
 } -->
 
 [license]: /LICENSE
-[license-badge]: https://img.shields.io/github/license/jerrykuku/luci-theme-argon?style=flat-square&a=1
-[prs]: https://github.com/jerrykuku/luci-theme-argon/pulls
+[license-badge]: https://img.shields.io/github/license/jerrykuku/luci-theme-nexus?style=flat-square&a=1
+[prs]: https://github.com/jerrykuku/luci-theme-nexus/pulls
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-[issues]: https://github.com/jerrykuku/luci-theme-argon/issues/new
+[issues]: https://github.com/jerrykuku/luci-theme-nexus/issues/new
 [issues-badge]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg?style=flat-square
-[release]: https://github.com/jerrykuku/luci-theme-argon/releases
-[release-badge]: https://img.shields.io/github/v/release/jerrykuku/luci-theme-argon?style=flat-square
-[download]: https://github.com/jerrykuku/luci-theme-argon/releases
-[download-badge]: https://img.shields.io/github/downloads/jerrykuku/luci-theme-argon/total?style=flat-square
+[release]: https://github.com/jerrykuku/luci-theme-nexus/releases
+[release-badge]: https://img.shields.io/github/v/release/jerrykuku/luci-theme-nexus?style=flat-square
+[download]: https://github.com/jerrykuku/luci-theme-nexus/releases
+[download-badge]: https://img.shields.io/github/downloads/jerrykuku/luci-theme-nexus/total?style=flat-square
 [contact]: https://t.me/jerryk6
 [contact-badge]: https://img.shields.io/badge/Contact-telegram-blue?style=flat-square
 [en-us-link]: /README.md
 [zh-cn-link]: /README_ZH.md
 [en-us-release-log]: /RELEASE.md
 [zh-cn-release-log]: /RELEASE_ZH.md
-[config-link]: https://github.com/jerrykuku/luci-app-argon-config/releases
+[config-link]: https://github.com/jerrykuku/luci-app-nexus-config/releases
 [lede]: https://github.com/coolsnowwolf/lede
 [official]: https://github.com/openwrt/openwrt
 [immortalwrt]: https://github.com/immortalwrt/immortalwrt
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jerrykuku/staff/master/argon_title4.svg">
 
-# A brand new OpenWrt LuCI theme
+# Nexus - OpenWrt LuCI Theme
 
-Argon is **a clean and tidy OpenWrt LuCI theme** that allows<br/>
-users to customize their login interface with images or videos.  
-It also supports automatic and manual switching between light and dark modes.
+Nexus is a **modern, professional OpenWrt LuCI theme**,  
+featuring a professional blue color scheme, automatic dark/light mode switching,  
+elegant Glassmorphism effects, and smooth user experience.
 
 [![license][license-badge]][license]
 [![prs][prs-badge]][prs]
@@ -48,114 +47,118 @@ It also supports automatic and manual switching between light and dark modes.
 **English** |
 [简体中文][zh-cn-link]
 
-[Key Features](#key-features) •
-[Branch](#branch-introduction) •
+[Features](#features) •
 [Version History](#version-history) •
-[Getting started](#getting-started) •
-[Screenshots](#screenshots) •
-[Contributors](#contributors) •
-[Credits](#credits)
+[Quick Start](#quick-start) •
+[Notes](#notes) •
+[Contributors](#contributors)
 
-<img src="https://raw.githubusercontent.com/jerrykuku/staff/master/argon2.gif">
 </div>
 
-## Key Features
+## Features
 
-- Clean Layout.
-- Adapted to mobile display.
-- Customizable theme colors.
-- Support for using Bing images as login background.
-- Support for custom uploading of images or videos as login background.
-- Automatically switch between light and dark modes with the system, and can also be set to a fixed mode.
-- Settings plugin with extensions [luci-app-argon-config][config-link]
-
-> **Upcoming Version **
->
-> "The current theme uses Less for CSS construction, and the method for switching between light and dark modes is relatively primitive. Meanwhile, the official theme has already switched to the UT template. I am exploring a way to build the theme template using modern front-end development tools, initially settling on a solution using Vite + UnoCSS. This approach will utilize a proxy server for debugging and also support HMR (Hot Module Replacement), significantly improving development speed. Currently, the basic development framework has been set up, but due to a busy schedule, I still need some time to migrate the existing styles. Stay tuned!"
-
-## Branch Introduction
-
-There are currently two main branches that are adapted to different versions of the **OpenWrt** source code.  
-The table below will provide a detailed introduction:
-
-| Branch | Version | Description                        | Matching source                                           |
-| ------ | ------- | ---------------------------------- | --------------------------------------------------------- |
-| master | v2.x.x  | Support the latest version of LuCI | [Official OpenWrt][official] • [ImmortalWrt][immortalwrt] |
-| 18.06 (deprecated) | v1.x.x  | Support the 18.06 version of LuCI   | [Lean's LEDE][lede]                                         |
+- 🎨 **Modern Design System** - Professional blue color scheme (#3B82F6), enterprise-grade dashboard style
+- ✍️ **Elegant Typography** - Poppins + Open Sans font combination, modern and professional
+- 🌓 **Dark/Light Mode** - Automatic or manual switching, respects system preferences
+- 💎 **Glassmorphism Effects** - Optimized frosted glass effects with clear visual hierarchy
+- ⚡ **Smooth Animations** - 150-300ms response time, supports prefers-reduced-motion
+- 📱 **Responsive Design** - Perfect adaptation for desktop, tablet, and mobile
+- ♿ **Accessibility** - WCAG AA compliant, high contrast text
+- 🎭 **Custom Backgrounds** - Support for images or videos as login backgrounds
 
 ## Version History
 
-The latest version is v2.4.3 [Click here][en-us-release-log] to view the full version history record.
+Current latest version is v3.0.0 - [Click here][en-us-release-log] to view the complete version history.
 
-## Getting started
+### v3.0.0 (2026-01-04)
 
-### Build for Lean's LEDE project (deprecated)
+- 🎉 **Major Update**: Theme rebranded to Nexus
+- 🎨 Color Upgrade: Professional blue palette (#3B82F6)
+- ✍️ Font Upgrade: Poppins + Open Sans
+- ⚡ Animation Optimization: 150-300ms + prefers-reduced-motion support
+- 🎯 Shadow Optimization: Softer modern elevation
+- ♿ Accessibility: WCAG compliance
 
-```bash
-cd lede/package/lean
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
-make menuconfig #choose LUCI->Theme->Luci-theme-argon
-make -j1 V=s
-```
+## Quick Start
 
-### Build for OpenWrt official SnapShots and ImmortalWrt
+### Build with Official OpenWrt SnapShots and ImmortalWrt
 
 ```bash
 cd openwrt/package
-git clone https://github.com/jerrykuku/luci-theme-argon.git
-make menuconfig #choose LUCI->Theme->Luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-nexus.git
+make menuconfig #choose LUCI->Theme->Luci-theme-nexus
 make -j1 V=s
 ```
 
-### Install for LuCI 18.06 ( Lean's LEDE )
-
-```bash
-wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v1.8.2/luci-theme-argon_1.8.2-20230609_all.ipk
-opkg install luci-theme-argon*.ipk
-```
-
-### Install for OpenWrt official SnapShots and ImmortalWrt
+### Install on Official OpenWrt and ImmortalWrt
 
 ```bash
 opkg install luci-compat
 opkg install luci-lib-ipkg
-wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.3.2/luci-theme-argon_2.3.2-r20250207_all.ipk
-opkg install luci-theme-argon*.ipk
+wget --no-check-certificate https://github.com/jerrykuku/luci-theme-nexus/releases/download/v3.0.0/luci-theme-nexus_3.0.0_all.ipk
+opkg install luci-theme-nexus*.ipk
 ```
 
-### Install luci-app-argon-config
+### Activate Theme
 
-```bash
-wget --no-check-certificate -O luci-app-argon-config_0.9_all.ipk https://github.com/jerrykuku/luci-app-argon-config/releases/download/v0.9/luci-app-argon-config_0.9_all.ipk
-opkg install luci-app-argon-config*.ipk
-```
+1. Login to LuCI interface
+2. Navigate to **System → System → Language and Style**
+3. Select **Nexus** from the **Design** dropdown
+4. Click **Save & Apply**
 
-## Notice
+## Notes
 
-- Chrome browser is highly recommended. There are some new css3 features used in this theme, currently only Chrome has the best compatibility.
-- Microsoft has officially retired Internet Explorer, RIP IE🙏<del>Currently, the mainline version of the IE series has bugs that need to be addressed.</del>
-- FireFox does not enable the backdrop-filter by default, [see here](https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter) for the opening method.
+- 💡 **Recommended Browsers**: Chrome/Edge/Firefox - Theme uses modern CSS3 features
+- 🎨 **Glassmorphism**: Firefox requires manual enabling of `backdrop-filter` ([see how](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter))
+- 📱 **Mobile**: Full support for touch operations and responsive layout
+- ♿ **Accessibility**: Supports keyboard navigation and screen readers
 
-## Screenshots
+## Technical Features
 
-![desktop](/Screenshots/screenshot_pc.jpg)
-![mobile](/Screenshots/screenshot_phone.jpg)
+### Design System
+
+- **Color Scheme**: Professional blue palette based on Tailwind Slate scale
+- **Typography**: Poppins (headings) + Open Sans (body)
+- **Shadow System**: 6-level soft shadows, Material Design compliant
+- **Spacing System**: Mathematical spacing (0.25rem increments)
+- **Border Radius**: Consistent rounded corners (6px-24px)
+
+### Performance Optimization
+
+- **Google Fonts**: Online loading, reduces package size
+- **CSS Variables**: Easy customization and theme switching
+- **Optimized Animations**: Reduced rendering overhead
+- **Responsive Images**: Auto-adapt to device resolution
+
+### Accessibility
+
+- **WCAG AA**: Text contrast meets standards
+- **Keyboard Navigation**: All interactive elements accessible via keyboard
+- **Reduced Motion**: Respects user motion preference settings
+- **Semantic HTML**: Screen reader friendly
 
 ## Contributors
 
-<a href="https://github.com/jerrykuku/luci-theme-argon/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=jerrykuku/luci-theme-argon&v=2" />
+<a href="https://github.com/jerrykuku/luci-theme-nexus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jerrykuku/luci-theme-nexus" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
 
 ## Related Projects
 
-- [luci-app-argon-config](https://github.com/jerrykuku/luci-app-argon-config): Argon theme config plugin
-- [openwrt-package](https://github.com/jerrykuku/openwrt-package): My OpenWrt package
-- [CasaOS](https://github.com/IceWhaleTech/CasaOS): A simple, easy-to-use, elegant open-source Personal Cloud system (My current main project)
+- [luci-app-nexus-config](https://github.com/jerrykuku/luci-app-nexus-config): Configuration plugin for Nexus theme
+- [openwrt-package](https://github.com/jerrykuku/openwrt-package): My OpenWrt packages
+- [CasaOS](https://github.com/IceWhaleTech/CasaOS): A simple, easy-to-use, elegant open-source personal cloud system
 
-## Credits
+## Acknowledgments
 
-[luci-theme-material](https://github.com/LuttyYang/luci-theme-material/)
+This theme is based on the following excellent projects:
+
+- [luci-theme-material](https://github.com/LuttyYang/luci-theme-material/) - Material Design theme
+- [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/) - Design inspiration
+- [Unsplash](https://unsplash.com/) - Login background images
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE)
