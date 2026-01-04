@@ -151,10 +151,16 @@
   body,
   html,
   .main,
-  .main-left,
   .main-right {
     background-color: var(--background-color) !important;
     background-image: var(--background-gradient), var(--background-pattern) !important;
+  }
+  .main-left {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3) !important;
   }
   .cbi-section,
   .cbi-map,
@@ -259,19 +265,32 @@
     background-color: transparent !important;
     color: var(--menu-color) !important;
   }
-  .menu.active,
+  .menu.active {
+    background-color: rgba(96, 165, 250, 0.2) !important;
+    color: #ffffff !important;
+  }
   .nav li.active {
     background-color: var(--primary) !important;
     color: #ffffff !important;
   }
+  .food,
+  a.food {
+    color: rgba(203, 213, 225, 0.9) !important;
+    padding-left: 2.5rem !important;
+  }
   .food.active,
   a.food.active {
     color: #ffffff !important;
-    background-color: var(--primary) !important;
+    background-color: rgba(59, 130, 246, 0.9) !important;
+    border-left: 3px solid #60a5fa !important;
   }
-  .food,
-  a.food {
-    color: var(--menu-color) !important;
+  .food:hover,
+  a.food:hover {
+    background-color: rgba(59, 130, 246, 0.2) !important;
+    color: #ffffff !important;
+  }
+  .menu:hover {
+    background-color: rgba(96, 165, 250, 0.1) !important;
   }
   .cbi-value-title,
   .cbi-value-field,

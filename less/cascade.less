@@ -214,14 +214,22 @@
   // COMPREHENSIVE DARK MODE OVERRIDES
   // Force ALL backgrounds dark and ALL text light
   // ========================================================================
-  // Force dark backgrounds on EVERYTHING
+  // Force dark backgrounds on body and main areas
   body,
   html,
   .main,
-  .main-left,
   .main-right {
     background-color: var(--background-color) !important;
     background-image: var(--background-gradient), var(--background-pattern) !important;
+  }
+
+  // Sidebar with glassmorphism (UI/UX Pro Max: blur 10-20px)
+  .main-left {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3) !important;
   }
 
   // All containers and sections
@@ -347,29 +355,48 @@
     color: var(--primary-light) !important;
   }
 
-  // Menu items
+  // Menu items - clear hierarchy
   .menu,
   .nav li {
     background-color: transparent !important;
     color: var(--menu-color) !important;
   }
 
-  .menu.active,
+  // Parent menu active state - lighter blue
+  .menu.active {
+    background-color: rgba(96, 165, 250, 0.2) !important;
+    color: #ffffff !important;
+  }
+
   .nav li.active {
     background-color: var(--primary) !important;
     color: #ffffff !important;
   }
 
-  // Fix for active submenu items
+  // Submenu items - distinct styling
+  .food,
+  a.food {
+    color: rgba(203, 213, 225, 0.9) !important; // Lighter grey
+    padding-left: 2.5rem !important;
+  }
+
+  // Active submenu - darker blue to differentiate from parent
   .food.active,
   a.food.active {
     color: #ffffff !important;
-    background-color: var(--primary) !important;
+    background-color: rgba(59, 130, 246, 0.9) !important;
+    border-left: 3px solid rgba(96, 165, 250, 1) !important;
   }
 
-  .food,
-  a.food {
-    color: var(--menu-color) !important;
+  // Hover states
+  .food:hover,
+  a.food:hover {
+    background-color: rgba(59, 130, 246, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  .menu:hover {
+    background-color: rgba(96, 165, 250, 0.1) !important;
   }
 
   // CBI specific elements
