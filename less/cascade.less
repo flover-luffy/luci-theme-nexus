@@ -24,47 +24,54 @@
 
 :root {
   // ========================================================================
-  // Nexus Theme - Modern Glassmorphism Design System
-  // Inspired by macOS Big Sur & Windows 11 Fluent Design
+  // Nexus Theme - Dark Mode Design System
+  // Modern Glassmorphism with Deep Black Background
   // ========================================================================
 
-  // Primary Colors
-  --primary: #3B82F6; // Blue-500
-  --primary-dark: #2563EB; // Blue-600
+  // Primary Colors - Adjusted for Dark Mode contrast
+  --primary: #60A5FA; // Blue-400
+  --primary-dark: #3B82F6; // Blue-500
   --primary-light: #60A5FA; // Blue-400
   --primary-lighter: #93C5FD; // Blue-300
 
   // Header & Navigation
   --header-color: #fff;
-  --header-bg: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  --menu-bg-color: rgba(255, 255, 255, 0.5); // Extreme transparency
-  --menu-color: #64748B;
-  --main-menu-color: #1E293B;
+  --header-bg: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  --menu-bg-color: rgba(17, 24, 39, 0.8); // Deep dark glass
+  --menu-color: #CBD5E1; // Slate-300
+  --main-menu-color: #F1F5F9; // Slate-100
 
-  // Backgrounds & Surfaces - DEEP for contrast
-  --background-color: #E0E7FF; // Indigo-100 base
-  --background-gradient: linear-gradient(135deg, #E0E7FF 0%, #DBEAFE 50%, #FCE7F3 100%);
-  --background-pattern: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM9 0h1v1H9zM0 9h1v1H0zM9 9h1v1H9z' fill='%23000' fill-opacity='0.03'/%3E%3C/svg%3E");
+  // Backgrounds & Surfaces - OLED BLACK (UI/UX Pro Max)
+  --background-color: #000000; // Pure black for OLED
+  --background-elevated: #121212; // Material Design elevated surface
+  --background-gradient: linear-gradient(135deg, #000000 0%, #0A0A0A 100%);
+  --background-pattern: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM9 0h1v1H9zM0 9h1v1H0zM9 9h1v1H9z' fill='%23fff' fill-opacity='0.02'/%3E%3C/svg%3E");
 
-  // Glass Cards - EXTREME transparency
-  --card-bg: rgba(255, 255, 255, 0.4);
-  --card-border: rgba(255, 255, 255, 0.6);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  // Glass Cards - Optimized for visibility (UI/UX Pro Max: 50-60% opacity)
+  --card-bg: rgba(30, 30, 30, 0.6); // 60% opacity for better visibility
+  --card-bg-hover: rgba(30, 30, 30, 0.75); // Hover state
+  --card-border: rgba(255, 255, 255, 0.12);
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
-  --login-form-bg-color: rgba(255, 255, 255, 0.25);
-  --login-form-border: rgba(255, 255, 255, 0.5);
+  --login-form-bg-color: rgba(30, 30, 30, 0.5);
+  --login-form-border: rgba(255, 255, 255, 0.18);
 
-  // Text & Borders
-  --text-main: #1E293B;
-  --text-secondary: #64748B;
-  --border-color: rgba(226, 232, 240, 0.8);
+  // Text & Borders (WCAG AAA: 7:1 contrast)
+  --text-main: #FFFFFF; // Pure white for maximum contrast
+  --text-secondary: #B0B0B0; // Lighter gray for better readability
+  --text-muted: #808080; // Muted text
+  --border-color: rgba(255, 255, 255, 0.12); // Subtle borders
 
-  // Effects - STRONG blur
-  --blur-radius: 24px;
-  --blur-saturate: 180%;
-  --blur-opacity: 0.4;
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.6);
+  // Effects (UI/UX Pro Max: blur 10-20px)
+  --blur-sm: blur(10px);
+  --blur-md: blur(16px); // Optimized blur
+  --blur-lg: blur(20px);
+  --blur-saturate: saturate(180%);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+
+  // Z-depth Shadow System
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3); // Primary color glow
 
   // Status Colors
   --success: #10B981;
@@ -87,7 +94,7 @@
 
   // Neutral Grays
   --white: #ffffff;
-  --gray-50: #F8FAFC;
+  --gray-50: rgba(255, 255, 255, 0.05); // Very subtle for zebra stripes
   --gray-100: #F1F5F9;
   --gray-200: #E2E8F0;
   --gray-300: #CBD5E1;
@@ -107,7 +114,7 @@
   --dark: var(--text-main);
   --darker: var(--black);
   --default: var(--gray-800);
-  --background-secondary: var(--white);
+  --background-secondary: rgba(30, 30, 30, 0.6);
 
   // Border Radius
   --radius-sm: 0.375rem;
@@ -170,272 +177,240 @@
 }
 
 // ========================================================================
-// Auto Dark Mode (Media Query)
+// COMPREHENSIVE DARK MODE STYLES
+// Force ALL backgrounds dark and ALL text light
 // ========================================================================
-@media (prefers-color-scheme: dark) {
-  :root {
-    // Primary Colors - Adjusted for Dark Mode contrast
-    --primary: #60A5FA; // Blue-400
-    --primary-dark: #3B82F6; // Blue-500
 
-    // Header & Navigation
-    --header-bg: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-    --menu-bg-color: rgba(17, 24, 39, 0.8); // Deep dark glass
-    --menu-color: #CBD5E1; // Slate-300
-    --main-menu-color: #F1F5F9; // Slate-100
-
-    // Backgrounds & Surfaces - DEEP BLACK
-    --background-color: #111827; // Gray-900 (near black)
-    --background-gradient: linear-gradient(135deg, #111827 0%, #1F2937 100%);
-    --background-pattern: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM9 0h1v1H9zM0 9h1v1H0zM9 9h1v1H9z' fill='%23fff' fill-opacity='0.03'/%3E%3C/svg%3E");
-
-    // Glass Cards - EXTREME transparency for dark
-    --card-bg: rgba(31, 41, 55, 0.3);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-    --login-form-bg-color: rgba(15, 23, 42, 0.2);
-    --login-form-border: rgba(255, 255, 255, 0.15);
-
-    // Text & Borders
-    --text-main: #F1F5F9;
-    --text-secondary: #94A3B8; // Slate-400
-    --border-color: rgba(51, 65, 85, 0.5); // Slate-700
-
-    // Effects
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-
-    // Override grays for dark mode
-    --gray-50: rgba(255, 255, 255, 0.05); // Very subtle for zebra stripes
-  }
-
-  // ========================================================================
-  // COMPREHENSIVE DARK MODE OVERRIDES
-  // Force ALL backgrounds dark and ALL text light
-  // ========================================================================
-  // Force dark backgrounds on body and main areas
-  body,
-  html,
-  .main,
-  .main-right {
-    background-color: var(--background-color) !important;
-    background-image: var(--background-gradient), var(--background-pattern) !important;
-  }
-
-  // Sidebar with glassmorphism (UI/UX Pro Max: blur 10-20px)
-  .main-left {
-    background-color: rgba(17, 24, 39, 0.8) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  // All containers and sections
-  .cbi-section,
-  .cbi-map,
-  .cbi-value,
-  .panel,
-  .card {
-    background-color: var(--card-bg) !important;
-  }
-
-  // Tables - force dark backgrounds
-  table,
-  .table,
-  tbody,
-  thead,
-  tfoot,
-  tr,
-  .tr {
-    background-color: transparent !important;
-  }
-
-  table>tbody>tr,
-  .table>.tr,
-  table>tbody>tr:nth-child(2n),
-  .table>.tr:nth-child(2n),
-  div>table>tbody>tr:nth-of-type(2n),
-  div>.table>.tr:nth-of-type(2n) {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-  }
-
-  table>thead>tr>th,
-  .table>.tr>.th,
-  table>tbody>tr>th,
-  table>tfoot>tr>th {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    color: var(--text-main) !important;
-  }
-
-  table>tbody>tr>td,
-  .table>.tr>.td,
-  table>tfoot>tr>td,
-  table>thead>tr>td {
-    color: var(--text-main) !important;
-    background-color: transparent !important;
-  }
-
-  // Headers - transparent backgrounds, white text
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--text-main) !important;
-    background: transparent !important;
-  }
-
-  // All text elements
-  p,
-  span,
-  div,
-  label,
-  li,
-  a,
-  strong,
-  em,
-  small {
-    color: var(--text-main) !important;
-  }
-
-  // Form elements
-  input,
-  select,
-  textarea,
-  button {
-    color: var(--text-main) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    border-color: var(--border-color) !important;
-  }
-
-  // Interface boxes
-  .ifacebox {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-  }
-
-  .ifacebox-head {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-  }
-
-  .ifacebox-body {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-  }
-
-  .ifacebox strong,
-  .ifacebox span,
-  .ifacebox label {
-    color: #ffffff !important;
-  }
-
-  // Progress bars
-  .cbi-progressbar {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  // Badges and labels
-  .label,
-  .badge,
-  .ifacebadge {
-    background-color: rgba(59, 130, 246, 0.3) !important;
-    color: #ffffff !important;
-  }
-
-  // Links
-  a:link,
-  a:visited,
-  a:active {
-    color: var(--primary) !important;
-  }
-
-  a:hover {
-    color: var(--primary-light) !important;
-  }
-
-  // ========================================================================
-  // MENU HIERARCHY SYSTEM (UI/UX Pro Max)
-  // Three-tier system: Normal → Parent Active → Child Active
-  // ========================================================================
-
-  // Base menu items
-  .menu,
-  .nav li {
-    background-color: transparent !important;
-    color: rgba(203, 213, 225, 0.9) !important;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
-
-  // Parent menu active state (Tier 2)
-  .menu.active {
-    background-color: rgba(59, 130, 246, 0.15) !important;
-    color: #ffffff !important;
-    border-left: 3px solid #3B82F6 !important;
-  }
-
-  .nav li.active {
-    background-color: var(--primary) !important;
-    color: #ffffff !important;
-  }
-
-  // Parent menu hover
-  .menu:hover {
-    background-color: rgba(59, 130, 246, 0.08) !important;
-    color: #ffffff !important;
-  }
-
-  // Submenu items (Tier 1) - distinct styling
-  .food,
-  a.food {
-    color: rgba(148, 163, 184, 0.9) !important;
-    padding-left: 3rem !important;
-    font-size: 0.875rem !important;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
-
-  // Active submenu (Tier 3) - darker blue to differentiate
-  .food.active,
-  a.food.active {
-    background-color: rgba(59, 130, 246, 0.25) !important;
-    color: #ffffff !important;
-    border-left: 3px solid #60A5FA !important;
-    font-weight: 500 !important;
-  }
-
-  // Submenu hover
-  .food:hover,
-  a.food:hover {
-    background-color: rgba(59, 130, 246, 0.12) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-
-  // Focus states for accessibility
-  .menu:focus-visible,
-  .food:focus-visible {
-    outline: 2px solid #3B82F6 !important;
-    outline-offset: -2px !important;
-  }
-
-  // CBI specific elements
-  .cbi-value-title,
-  .cbi-value-field,
-  .cbi-section-descr,
-  .cbi-map-descr {
-    color: var(--text-main) !important;
-    background-color: transparent !important;
-  }
-
-  // Row styles
-  .cbi-rowstyle-1,
-  .cbi-rowstyle-2 {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-  }
-
-  // Import granular overrides
-  @import "modules/dark-overrides.less";
+// Force dark backgrounds on body and main areas
+body,
+html,
+.main,
+.main-right {
+  background-color: var(--background-color) !important;
+  background-image: var(--background-gradient), var(--background-pattern) !important;
 }
+
+// Sidebar with optimized glassmorphism (UI/UX Pro Max: blur 16px)
+.main-left {
+  background-color: rgba(30, 30, 30, 0.7) !important;
+  backdrop-filter: var(--blur-md) var(--blur-saturate) !important;
+  -webkit-backdrop-filter: var(--blur-md) var(--blur-saturate) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+// All containers and sections with hover effect
+.cbi-section,
+.cbi-map,
+.cbi-value,
+.panel,
+.card {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: var(--blur-md) !important;
+  -webkit-backdrop-filter: var(--blur-md) !important;
+  border: 1px solid var(--card-border) !important;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+  &:hover {
+    background-color: var(--card-bg-hover) !important;
+    box-shadow: var(--card-shadow), var(--shadow-glow) !important;
+  }
+}
+
+// Tables - force dark backgrounds
+table,
+.table,
+tbody,
+thead,
+tfoot,
+tr,
+.tr {
+  background-color: transparent !important;
+}
+
+table>tbody>tr,
+.table>.tr,
+table>tbody>tr:nth-child(2n),
+.table>.tr:nth-child(2n),
+div>table>tbody>tr:nth-of-type(2n),
+div>.table>.tr:nth-of-type(2n) {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+table>thead>tr>th,
+.table>.tr>.th,
+table>tbody>tr>th,
+table>tfoot>tr>th {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-main) !important;
+}
+
+table>tbody>tr>td,
+.table>.tr>.td,
+table>tfoot>tr>td,
+table>thead>tr>td {
+  color: var(--text-main) !important;
+  background-color: transparent !important;
+}
+
+// Headers - transparent backgrounds, white text
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main) !important;
+  background: transparent !important;
+}
+
+// All text elements
+p,
+span,
+div,
+label,
+li,
+a,
+strong,
+em,
+small {
+  color: var(--text-main) !important;
+}
+
+// Form elements
+input,
+select,
+textarea,
+button {
+  color: var(--text-main) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--border-color) !important;
+}
+
+// Interface boxes
+.ifacebox {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.ifacebox-head {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.ifacebox-body {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.ifacebox strong,
+.ifacebox span,
+.ifacebox label {
+  color: #ffffff !important;
+}
+
+// Progress bars
+.cbi-progressbar {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+// Badges and labels
+.label,
+.badge,
+.ifacebadge {
+  background-color: rgba(59, 130, 246, 0.3) !important;
+  color: #ffffff !important;
+}
+
+// Links
+a:link,
+a:visited,
+a:active {
+  color: var(--primary) !important;
+}
+
+a:hover {
+  color: var(--primary-light) !important;
+}
+
+// ========================================================================
+// MENU HIERARCHY SYSTEM (UI/UX Pro Max)
+// Three-tier system: Normal → Parent Active → Child Active
+// ========================================================================
+
+// Base menu items
+.menu,
+.nav li {
+  background-color: transparent !important;
+  color: rgba(203, 213, 225, 0.9) !important;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+// Parent menu active state (Tier 2)
+.menu.active {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #ffffff !important;
+  border-left: 3px solid #3B82F6 !important;
+}
+
+.nav li.active {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+// Parent menu hover
+.menu:hover {
+  background-color: rgba(59, 130, 246, 0.08) !important;
+  color: #ffffff !important;
+}
+
+// Submenu items (Tier 1) - distinct styling
+.food,
+a.food {
+  color: rgba(148, 163, 184, 0.9) !important;
+  padding-left: 3rem !important;
+  font-size: 0.875rem !important;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+// Active submenu (Tier 3) - darker blue to differentiate
+.food.active,
+a.food.active {
+  background-color: rgba(59, 130, 246, 0.25) !important;
+  color: #ffffff !important;
+  border-left: 3px solid #60A5FA !important;
+  font-weight: 500 !important;
+}
+
+// Submenu hover
+.food:hover,
+a.food:hover {
+  background-color: rgba(59, 130, 246, 0.12) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+// Focus states for accessibility
+.menu:focus-visible,
+.food:focus-visible {
+  outline: 2px solid #3B82F6 !important;
+  outline-offset: -2px !important;
+}
+
+// CBI specific elements
+.cbi-value-title,
+.cbi-value-field,
+.cbi-section-descr,
+.cbi-map-descr {
+  color: var(--text-main) !important;
+  background-color: transparent !important;
+}
+
+// Row styles
+.cbi-rowstyle-1,
+.cbi-rowstyle-2 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+// Import granular overrides
+@import "modules/dark-overrides.less";
 
 // ========================================================================
 // Accessibility - Reduced Motion Support
