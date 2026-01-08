@@ -43,7 +43,7 @@
 		blur_opacity_dark = cfg.get_first('nexus', 'global', 'transparency_dark');
 		mode = cfg.get_first('nexus', 'global', 'mode');
 		bar_color = (mode == 'dark') ? dark_primary : primary;
-	}
+
 
 -%}
 <!DOCTYPE html>
@@ -89,6 +89,7 @@
 
 	<link rel="stylesheet" href="{{ media }}/css/cascade.css{# ?v=PKG_VERSION #}">
 
+	<style>
 		{% if (access('/etc/config/nexus')): %}
 		:root {
 			--primary: {{ primary }};

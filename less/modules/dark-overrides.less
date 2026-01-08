@@ -45,6 +45,14 @@ input:-webkit-autofill:active {
 // Component Overrides
 // ========================================================================
 
+// Cards & Sections
+.cbi-section,
+.cbi-map,
+.panel {
+    background-color: rgba(30, 30, 30, 0.85) !important; // Increase opacity for better contrast
+    backdrop-filter: blur(20px) !important; // Increase blur
+}
+
 // Tables
 .cbi-section-table-row {
     background-color: rgba(255, 255, 255, 0.03) !important;
@@ -250,9 +258,11 @@ ul.tabs,
     border-bottom: 1px solid var(--border-default) !important;
 
     li a {
-        background-color: rgba(255, 255, 255, 0.05) !important;
+        background-color: var(--bg-elevated) !important;
         color: var(--text-secondary) !important;
         border: 1px solid transparent !important;
+        margin-right: 2px !important; // 增加间距
+        border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important; // 圆角优化
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.1) !important;
@@ -262,10 +272,11 @@ ul.tabs,
 
     li.cbi-tab>a,
     li.active>a {
-        background-color: var(--card-bg) !important;
-        color: var(--primary) !important;
-        border: 1px solid var(--border-default) !important;
-        border-bottom-color: var(--card-bg) !important;
+        background-color: var(--primary) !important; // 激活状态使用主色
+        color: #ffffff !important; // 激活状态白色文字
+        font-weight: 600 !important;
+        border: 1px solid var(--primary) !important;
+        border-bottom-color: var(--primary) !important;
     }
 }
 

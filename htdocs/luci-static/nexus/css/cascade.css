@@ -393,6 +393,12 @@ input:-webkit-autofill:active {
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
 }
+.cbi-section,
+.cbi-map,
+.panel {
+  background-color: rgba(30, 30, 30, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+}
 .cbi-section-table-row {
   background-color: rgba(255, 255, 255, 0.03) !important;
 }
@@ -535,9 +541,11 @@ ul.tabs,
 }
 ul.tabs li a,
 .cbi-tabmenu li a {
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-color: var(--bg-elevated) !important;
   color: var(--text-secondary) !important;
   border: 1px solid transparent !important;
+  margin-right: 2px !important;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
 }
 ul.tabs li a:hover,
 .cbi-tabmenu li a:hover {
@@ -548,10 +556,11 @@ ul.tabs li.cbi-tab > a,
 .cbi-tabmenu li.cbi-tab > a,
 ul.tabs li.active > a,
 .cbi-tabmenu li.active > a {
-  background-color: var(--card-bg) !important;
-  color: var(--primary) !important;
-  border: 1px solid var(--border-default) !important;
-  border-bottom-color: var(--card-bg) !important;
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid var(--primary) !important;
+  border-bottom-color: var(--primary) !important;
 }
 embed,
 object,
@@ -569,6 +578,161 @@ svg,
   background-color: rgba(255, 255, 255, 0.08) !important;
   color: var(--text-primary) !important;
   border: 1px solid var(--border-default) !important;
+}
+.modal,
+.cbi-modal,
+[role="dialog"],
+.modal-overlay {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid var(--border-default) !important;
+  box-shadow: var(--shadow-xl);
+  color: var(--text-primary) !important;
+}
+.modal-content,
+.cbi-modal > div,
+.modal-body {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+.modal-header,
+.modal-title {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-default);
+}
+.modal p,
+.modal span,
+.modal label,
+.cbi-modal p,
+.cbi-modal span,
+.cbi-modal label {
+  color: var(--text-secondary) !important;
+}
+.modal input[type="file"],
+.modal input[type="text"],
+.cbi-modal input[type="file"],
+.cbi-modal input[type="text"] {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--input-border) !important;
+}
+.modal input[type="file"]:hover,
+.modal input[type="text"]:hover,
+.cbi-modal input[type="file"]:hover,
+.cbi-modal input[type="text"]:hover {
+  background-color: var(--input-bg-hover) !important;
+  border-color: var(--input-border-hover) !important;
+}
+.modal input[type="file"]:focus,
+.modal input[type="text"]:focus,
+.cbi-modal input[type="file"]:focus,
+.cbi-modal input[type="text"]:focus {
+  background-color: var(--input-bg-focus) !important;
+  border-color: var(--input-border-focus) !important;
+  box-shadow: var(--focus-ring);
+}
+.modal .btn,
+.modal button,
+.cbi-modal .btn,
+.cbi-modal button,
+.cbi-modal .cbi-button {
+  background-color: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-default) !important;
+}
+.modal .btn:hover,
+.modal button:hover,
+.cbi-modal .btn:hover,
+.cbi-modal button:hover,
+.cbi-modal .cbi-button:hover {
+  background-color: var(--input-bg-hover) !important;
+  border-color: var(--border-strong) !important;
+}
+.modal .btn-primary,
+.modal .cbi-button-apply,
+.modal .cbi-button-save,
+.cbi-modal .cbi-button-apply,
+.cbi-modal .cbi-button-save {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.modal .btn-primary:hover,
+.modal .cbi-button-apply:hover,
+.modal .cbi-button-save:hover,
+.cbi-modal .cbi-button-apply:hover,
+.cbi-modal .cbi-button-save:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+}
+.modal .btn-default,
+.modal .cbi-button-reset,
+.cbi-modal .cbi-button-reset {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-default) !important;
+}
+.modal .btn-default:hover,
+.modal .cbi-button-reset:hover,
+.cbi-modal .cbi-button-reset:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--border-strong) !important;
+}
+.modal-backdrop,
+#modal_overlay {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+[data-page="admin-system-opkg"] .modal,
+[data-page="admin-system-opkg"] .cbi-modal {
+  background-color: var(--card-bg) !important;
+}
+[data-page="admin-system-opkg"] .modal input[type="file"],
+[data-page="admin-system-opkg"] .cbi-modal input[type="file"] {
+  background-color: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--input-border) !important;
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+}
+[data-page="admin-system-opkg"] .modal input[type="file"]::file-selector-button,
+[data-page="admin-system-opkg"] .cbi-modal input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
+  color: #ffffff !important;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-sm);
+  margin-right: var(--spacing-3);
+  cursor: pointer;
+}
+[data-page="admin-system-opkg"] .modal input[type="file"]::file-selector-button:hover,
+[data-page="admin-system-opkg"] .cbi-modal input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
+}
+#modal_overlay {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px) !important;
+  z-index: 9999 !important;
+}
+#modal_overlay .modal {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-default) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  border-radius: var(--radius-lg) !important;
+}
+#modal_overlay .modal pre,
+#modal_overlay .modal h4,
+#modal_overlay .modal p,
+#modal_overlay .modal div {
+  color: var(--text-primary) !important;
+  background-color: transparent !important;
+}
+#modal_overlay .modal.loading-state {
+  background-image: url(/luci-static/nexus/img/loading.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center 2rem !important;
 }
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -4559,161 +4723,6 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
   transform: none;
 }
 /* modules */
-.modal,
-.cbi-modal,
-[role="dialog"],
-.modal-overlay {
-  background-color: var(--card-bg) !important;
-  backdrop-filter: var(--blur-md);
-  -webkit-backdrop-filter: var(--blur-md);
-  border: 1px solid var(--border-default) !important;
-  box-shadow: var(--shadow-xl);
-  color: var(--text-primary) !important;
-}
-.modal-content,
-.cbi-modal > div,
-.modal-body {
-  background-color: transparent !important;
-  color: var(--text-primary) !important;
-}
-.modal-header,
-.modal-title {
-  color: var(--text-primary) !important;
-  border-bottom: 1px solid var(--border-default);
-}
-.modal p,
-.modal span,
-.modal label,
-.cbi-modal p,
-.cbi-modal span,
-.cbi-modal label {
-  color: var(--text-secondary) !important;
-}
-.modal input[type="file"],
-.modal input[type="text"],
-.cbi-modal input[type="file"],
-.cbi-modal input[type="text"] {
-  background-color: var(--input-bg) !important;
-  color: var(--input-text) !important;
-  border: 1px solid var(--input-border) !important;
-}
-.modal input[type="file"]:hover,
-.modal input[type="text"]:hover,
-.cbi-modal input[type="file"]:hover,
-.cbi-modal input[type="text"]:hover {
-  background-color: var(--input-bg-hover) !important;
-  border-color: var(--input-border-hover) !important;
-}
-.modal input[type="file"]:focus,
-.modal input[type="text"]:focus,
-.cbi-modal input[type="file"]:focus,
-.cbi-modal input[type="text"]:focus {
-  background-color: var(--input-bg-focus) !important;
-  border-color: var(--input-border-focus) !important;
-  box-shadow: var(--focus-ring);
-}
-.modal .btn,
-.modal button,
-.cbi-modal .btn,
-.cbi-modal button,
-.cbi-modal .cbi-button {
-  background-color: var(--input-bg) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-default) !important;
-}
-.modal .btn:hover,
-.modal button:hover,
-.cbi-modal .btn:hover,
-.cbi-modal button:hover,
-.cbi-modal .cbi-button:hover {
-  background-color: var(--input-bg-hover) !important;
-  border-color: var(--border-strong) !important;
-}
-.modal .btn-primary,
-.modal .cbi-button-apply,
-.modal .cbi-button-save,
-.cbi-modal .cbi-button-apply,
-.cbi-modal .cbi-button-save {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
-  border-color: var(--primary) !important;
-  color: #ffffff !important;
-}
-.modal .btn-primary:hover,
-.modal .cbi-button-apply:hover,
-.modal .cbi-button-save:hover,
-.cbi-modal .cbi-button-apply:hover,
-.cbi-modal .cbi-button-save:hover {
-  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
-}
-.modal .btn-default,
-.modal .cbi-button-reset,
-.cbi-modal .cbi-button-reset {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-default) !important;
-}
-.modal .btn-default:hover,
-.modal .cbi-button-reset:hover,
-.cbi-modal .cbi-button-reset:hover {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  border-color: var(--border-strong) !important;
-}
-.modal-backdrop,
-#modal_overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(4px);
-}
-[data-page="admin-system-opkg"] .modal,
-[data-page="admin-system-opkg"] .cbi-modal {
-  background-color: var(--card-bg) !important;
-}
-[data-page="admin-system-opkg"] .modal input[type="file"],
-[data-page="admin-system-opkg"] .cbi-modal input[type="file"] {
-  background-color: var(--input-bg) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--input-border) !important;
-  padding: var(--spacing-3);
-  border-radius: var(--radius-md);
-}
-[data-page="admin-system-opkg"] .modal input[type="file"]::file-selector-button,
-[data-page="admin-system-opkg"] .cbi-modal input[type="file"]::file-selector-button {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
-  color: #ffffff !important;
-  border: none;
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--radius-sm);
-  margin-right: var(--spacing-3);
-  cursor: pointer;
-}
-[data-page="admin-system-opkg"] .modal input[type="file"]::file-selector-button:hover,
-[data-page="admin-system-opkg"] .cbi-modal input[type="file"]::file-selector-button:hover {
-  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
-}
-#modal_overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(4px) !important;
-  z-index: 9999 !important;
-}
-#modal_overlay .modal {
-  background-color: var(--card-bg) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--border-default) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
-  border-radius: var(--radius-lg) !important;
-}
-#modal_overlay .modal pre,
-#modal_overlay .modal h4,
-#modal_overlay .modal p,
-#modal_overlay .modal div {
-  color: var(--text-primary) !important;
-  background-color: transparent !important;
-}
-#modal_overlay .modal.loading-state {
-  background-image: url(/luci-static/nexus/img/loading.svg) !important;
-  background-repeat: no-repeat !important;
-  background-position: center 2rem !important;
-}
 /* responsive */
 @media all and (-ms-high-contrast: none) {
   .main > .main-left > .nav > .slide > .menu::before {
