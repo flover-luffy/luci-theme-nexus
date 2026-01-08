@@ -54,6 +54,7 @@
   --bg-elevated: #0A0A0A; // Slightly elevated
   --bg-surface: #121212; // Material Design surface
   --bg-overlay: #1A1A1A; // Overlay/modal background
+  --bg-dropdown: rgba(30, 30, 30, 0.98); // Dropdown background (near-opaque for readability)
 
   // Glass Effects (50-60% opacity per UI/UX Pro Max)
   --glass-bg: rgba(30, 30, 30, 0.6);
@@ -1974,7 +1975,7 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   max-width: none;
   max-height: 200px !important;
   border: 0 solid #918e8c;
-  background: var(--card-bg);
+  background: var(--bg-dropdown) !important;
   box-shadow: 0 0 4px #918e8c;
   border-radius: 0.25rem;
   color: var(--main-menu-color);
