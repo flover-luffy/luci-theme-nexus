@@ -1920,11 +1920,11 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   align-self: center;
   flex-grow: 1;
   flex-shrink: 1;
-  min-height: 20px;
-  padding: 0.125rem .25em;
+  min-height: 32px; // Increased from 20px for better readability
+  padding: 0.5rem 0.75rem; // Increased from 0.125rem .25em
   white-space: nowrap;
   text-overflow: ellipsis;
-
+  line-height: 1.5; // Add explicit line-height
 }
 
 .cbi-dropdown>ul>li .hide-open {

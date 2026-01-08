@@ -3278,10 +3278,11 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   align-self: center;
   flex-grow: 1;
   flex-shrink: 1;
-  min-height: 20px;
-  padding: 0.125rem 0.25em;
+  min-height: 32px;
+  padding: 0.5rem 0.75rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: 1.5;
 }
 .cbi-dropdown > ul > li .hide-open {
   display: initial;
