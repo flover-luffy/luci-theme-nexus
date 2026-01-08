@@ -226,5 +226,19 @@ input:-webkit-autofill:active {
 // Mobile Menu Toggle
 .showSide {
     color: #fff !important;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+// 防火墙区域颜色优化 (柔和化)
+.zonebadge {
+    &.zone-wan {
+        background-color: rgba(220, 38, 38, 0.2) !important;
+        border-color: rgba(220, 38, 38, 0.5) !important;
+        color: #fca5a5 !important;
+    }
+
+    &.zone-lan {
+        background-color: rgba(22, 163, 74, 0.2) !important;
+        border-color: rgba(22, 163, 74, 0.5) !important;
+        color: #86efac !important;
+    }
 }

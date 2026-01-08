@@ -516,7 +516,16 @@ input:-webkit-autofill:active {
 }
 .showSide {
   color: #fff !important;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.zonebadge.zone-wan {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+  color: #fca5a5 !important;
+}
+.zonebadge.zone-lan {
+  background-color: rgba(22, 163, 74, 0.2) !important;
+  border-color: rgba(22, 163, 74, 0.5) !important;
+  color: #86efac !important;
 }
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -1263,7 +1272,7 @@ select[multiple="multiple"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--darker);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   overflow: hidden;
 }
 .login-page .video video {
@@ -4637,6 +4646,24 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
 [data-page="admin-system-opkg"] .cbi-modal input[type="file"]::file-selector-button:hover {
   background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
 }
+.loading,
+#loading {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: #fff !important;
+  backdrop-filter: blur(4px);
+}
+.loading span,
+#loading span {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-default);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  background-repeat: no-repeat !important;
+  background-position: 1rem center !important;
+  padding-left: 3.5rem !important;
+}
 /* responsive */
 @media all and (-ms-high-contrast: none) {
   .main > .main-left > .nav > .slide > .menu::before {
@@ -4717,9 +4744,6 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
   .main > .main-left > .nav > .slide > .menu,
   .main > .main-left > .nav > li > [data-title="Log_out"] {
     font-size: 0.9rem;
-  }
-  .main > .main-left > .nav > .slide > .slide-menu > li > a {
-    font-size: 0.875rem;
   }
   #modal_overlay {
     top: 0rem;
