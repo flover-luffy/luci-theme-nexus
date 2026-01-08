@@ -103,10 +103,18 @@ input:-webkit-autofill:active {
 .cbi-button-apply,
 .cbi-button-save,
 .cbi-button-positive,
-.cbi-button-action {
-    background-color: var(--primary) !important;
+.cbi-button-action,
+.cbi-button-reload {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
     border-color: var(--primary) !important;
     color: #fff !important;
+    transition: all 200ms ease;
+
+    &:hover {
+        background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+        transform: translateY(-1px);
+    }
 }
 
 

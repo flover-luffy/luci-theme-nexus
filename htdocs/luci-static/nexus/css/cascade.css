@@ -218,14 +218,20 @@ table > thead > tr > th,
 table > tbody > tr > th,
 table > tfoot > tr > th {
   background-color: rgba(255, 255, 255, 0.08) !important;
-  color: var(--text-main) !important;
+  color: var(--text-tertiary) !important;
+  font-weight: 600 !important;
 }
 table > tbody > tr > td,
 .table > .tr > .td,
 table > tfoot > tr > td,
 table > thead > tr > td {
-  color: var(--text-main) !important;
+  color: var(--text-primary) !important;
   background-color: transparent !important;
+}
+table > tbody > tr:hover,
+.table > .tr:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transition: background-color 200ms ease;
 }
 h1,
 h2,
@@ -256,14 +262,22 @@ button {
   border-color: var(--border-color) !important;
 }
 .ifacebox {
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-md);
+  transition: all 200ms ease;
+}
+.ifacebox:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
 }
 .ifacebox-head {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
   color: #ffffff !important;
+  font-weight: 600;
 }
 .ifacebox-body {
-  background-color: rgba(255, 255, 255, 0.03) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 .ifacebox strong,
 .ifacebox span,
@@ -271,7 +285,15 @@ button {
   color: #ffffff !important;
 }
 .cbi-progressbar {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-full);
+  overflow: visible;
+}
+.cbi-progressbar > div {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%) !important;
+  transition: width 300ms ease;
+  border-radius: var(--radius-full);
 }
 .label,
 .badge,
@@ -315,10 +337,10 @@ a.food {
 }
 .food.active,
 a.food.active {
-  background-color: rgba(59, 130, 246, 0.25) !important;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 100%) !important;
   color: #ffffff !important;
   border-left: 3px solid #60A5FA !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 .food:hover,
 a.food:hover {
@@ -414,10 +436,21 @@ input:-webkit-autofill:active {
 .cbi-button-apply,
 .cbi-button-save,
 .cbi-button-positive,
-.cbi-button-action {
-  background-color: var(--primary) !important;
+.cbi-button-action,
+.cbi-button-reload {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
   border-color: var(--primary) !important;
   color: #fff !important;
+  transition: all 200ms ease;
+}
+.cbi-button-apply:hover,
+.cbi-button-save:hover,
+.cbi-button-positive:hover,
+.cbi-button-action:hover,
+.cbi-button-reload:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-active) 100%) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+  transform: translateY(-1px);
 }
 .node-services-vssr .block {
   background-color: rgba(255, 255, 255, 0.05) !important;
